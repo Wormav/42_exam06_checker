@@ -104,7 +104,10 @@ class MiniServTester:
 
         system_functions = [
             '__darwin_check_fd_set_overflow', '__memset_chk', '__sprintf_chk',
-            'darwin_check_fd_set_overflow', 'memset_chk', 'sprintf_chk'
+            'darwin_check_fd_set_overflow', 'memset_chk', 'sprintf_chk',
+            '__chkstk_darwin', '__stack_chk_fail', '__stack_chk_guard',
+            '__strcat_chk', '__strcpy_chk', 'chkstk_darwin', 'stack_chk_fail',
+            'stack_chk_guard', 'strcat_chk', 'strcpy_chk'
         ]
 
         try:
