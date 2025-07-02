@@ -22,7 +22,7 @@ Clone this repository directly into your working directory containing your `mini
 
 ```bash
 # In your working directory containing mini_serv.c
-git clone https://github.com/your-username/42_exam06_checker.git
+git clone https://github.com/Wormav/42_exam06_checker.git
 ```
 
 Your directory structure should look like this:
