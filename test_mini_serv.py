@@ -26,7 +26,6 @@ class MiniServTester:
         self.total_tests = 0
         self.passed_tests = 0
 
-        # Chercher les fichiers dans le dossier parent
         self.parent_dir = Path(__file__).parent.parent
         self.src_path = self.parent_dir / self.src_name
         self.exec_path = self.parent_dir / self.exec_name
@@ -73,7 +72,6 @@ class MiniServTester:
             self.log(f"❌ File {self.src_name} not found in {self.parent_dir}", Colors.RED)
             return False
 
-        # Changer vers le dossier parent pour compiler
         original_cwd = os.getcwd()
         os.chdir(self.parent_dir)
 
@@ -606,23 +604,6 @@ class MiniServTester:
                     for i, test in enumerate(failed_tests, 1):
                         f.write(f"{i}. {test}\n")
                     f.write("\n")
-
-                requirements = [
-                    ("Correct error messages", any("arguments" in desc for success, desc in self.test_results if success)),
-                    ("Connection handling", any("arrival" in desc for success, desc in self.test_results if success)),
-                    ("Message broadcasting", any("broadcasting" in desc for success, desc in self.test_results if success)),
-                    ("Multi-line messages", any("multi-line" in desc for success, desc in self.test_results if success)),
-                    ("Clean disconnections", any("disconnection" in desc for success, desc in self.test_results if success)),
-                    ("Acceptable performance", any("performance" in desc or "rapid" in desc for success, desc in self.test_results if success)),
-                ]
-
-                f.write("CONFORMITY\n")
-                f.write("-" * 20 + "\n")
-                for req, status in requirements:
-                    status_str = "✅ OK" if status else "❌ NOK"
-                    f.write(f"{status_str:6} {req}\n")
-
-                f.write("\n")
 
                 f.write("CONCLUSION\n")
                 f.write("-" * 15 + "\n")
