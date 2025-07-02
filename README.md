@@ -105,6 +105,14 @@ The script generates two types of output:
 1. **Real-time terminal output** with colored results
 2. **Detailed report file** (`test_rapport.txt`) with complete analysis
 
+### Example Output
+
+**Terminal Output:**
+![Terminal Output](img/terminal.png)
+
+**Generated Report:**
+![Test Report](img/rapport.png)
+
 ## Common Issues & Tips
 
 - **Compilation errors**: Ensure your code follows the subject requirements exactly
